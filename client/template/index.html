@@ -1,0 +1,21 @@
+<template name="memoryCards">
+  <h1>Last entries</h1>
+  {{#each entries}}
+    {{> memoryCardsEntry}}
+  {{/each}}
+</template>
+
+<template name="memoryCardsEntry">
+  <div class="row memoryCardLine">
+    <div class="col-md-6">
+      <div class="memoryCard">{{phrase1}}</div>
+    </div>
+    <div class="col-md-5">
+      <div class="memoryCard langTo">{{phrase2}}</div>
+    </div>
+    <div class="hidden-xs col-md-1">
+      <button class="btn btn-danger btn-xs js-delete {{hiddenClass}}"><i class="fa fa-trash" aria-hidden="true"></i>
+      </button>
+    </div>
+  </div>
+</template>

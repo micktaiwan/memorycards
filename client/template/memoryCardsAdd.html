@@ -1,0 +1,26 @@
+<template name="memoryCardsAdd">
+
+  <div class="memoryCardsAlbums">
+    {{> memoryCardsAlbum }}
+  </div>
+
+  <h1>Add a pair of phrases</h1>
+
+  <p>Espa&ntilde;ol - Fran&ccedil;ais</p>
+
+  <form class="form-inline">
+    <input class="form-control" name="phrase1"/>
+    <input class="form-control" name="phrase2"/>
+    <button class="btn btn-primary js-add">Add</button>
+  </form>
+
+  <a href="#" class="js-bulk-add-link">bulk add</a>
+
+  <div class="bulk-block">
+    <h1>Bulk Add</h1>
+
+    <p>Espa&ntilde;ol&lt;tab&gt;Fran&ccedil;ais</p>
+    <textarea class="form-control" name="bulkAdd" cols="60" rows="10"></textarea><br/>
+    <button class="btn btn-primary js-bulk-add">Bulk add</button>
+  </div>
+</template>
