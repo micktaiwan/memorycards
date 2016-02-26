@@ -1,0 +1,22 @@
+<template name="memoryCardsRevisionFinished">
+  <h1>Finished</h1>
+  <div>Score: {{ score}} / 30</div>
+  <button class="btn btn-primary js-start-revision">Start another revision</button>
+  {{#each phrases}}
+    {{> memoryCardsEntryLearned}}
+  {{/each}}
+</template>
+
+<template name="memoryCardsEntryLearned">
+  <div class="row memoryCardLine">
+    <div class="col-md-6">
+      <div class="memoryCard">{{phrase1}}</div>
+    </div>
+    <div class="col-md-5">
+      <div class="memoryCard langTo">{{phrase2}}</div>
+    </div>
+    <div class="hidden-xs col-md-1">
+      {{rank}}
+    </div>
+  </div>
+</template>

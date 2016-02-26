@@ -1,0 +1,32 @@
+<template name="memoryCardsAlbums">
+
+  <a class="btn btn-primary pull-right" href="{{pathFor 'memoryCardsAlbumAdd'}}">
+    <i class="fa fa-plus-circle" aria-hidden="true"></i> Add an album
+  </a>
+
+  <h1>Albums</h1>
+
+  <div class="memoryCardsAlbums">
+    {{#each albums}}
+      {{>memoryCardsAlbum}}
+    {{/each}}
+  </div>
+
+</template>
+
+<template name="memoryCardsAlbum">
+  <div class="row album">
+    <div class="row">
+      <div class="col-md-10">
+        <div id="name">{{name}}</div>
+      </div>
+      <div class="col-md-2">
+        <div id="number">{{phraseNumber}} phrases</div>
+        <button class="btn btn-primary btn-xs js-add">
+          <i class="fa fa-plus-circle" aria-hidden="true"></i> Add phrases
+        </button>
+      </div>
+    </div>
+    <div id="descr">{{descr}}</div>
+  </div>
+</template>

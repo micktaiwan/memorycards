@@ -1,0 +1,24 @@
+<template name="memoryCardsRevise">
+  {{#with getNextPhrase}}
+    <div class="memoryCardRevise">{{phrase1}}</div>
+    <p>Seen {{seen}} times, current level: {{rank}}, left: {{left}}</p>
+
+    <div class="btn btn-default js-click-show-answer">Show answer</div>
+    <div class="memoryCardResponse initiallyHidden">{{phrase2}}</div>
+    {{#if currentUser}}
+      <div class="memoryEditButtons initiallyHidden">
+        <!--<button class="btn btn-danger">Delete</button>-->
+      </div>
+    {{/if}}
+    <div class="memoryButtons initiallyHidden">
+      {{#if currentUser}}
+        <button class="btn btn-danger js-answer" data-rank="0">Didn't know it at all</button>
+        <button class="btn btn-warning js-answer" data-rank="1">Sounds familiar</button>
+        <button class="btn btn-primary js-answer" data-rank="2">I know it when I read it in context</button>
+        <button class="btn btn-success js-answer" data-rank="3">I master it in every ways</button>
+      {{else}}
+        <button class="btn btn-success js-answer">Next</button>
+      {{/if}}
+    </div>
+  {{/with}}
+</template>
