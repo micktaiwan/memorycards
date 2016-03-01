@@ -6,11 +6,13 @@ Template.memoryCardsAlbumAdd.events({
 
   'click .js-add': function(e, tpl) {
     e.preventDefault();
+    var from = tpl.$('select[name=lgFrom]').val();
+    var to = tpl.$('select[name=lgTo]').val();
     var name = tpl.$('input[name=name]').val();
     var descr = tpl.$('textarea[name=descr]').val();
     if(name) {
-      Meteor.call('memoryCardsAlbumAdd', name, descr, function(err, rv) {
-        Router.go('/memoryCards/add/'+rv)
+      Meteor.call('memoryCardsAlbumAdd', from, to, name, descr, function(err, rv) {
+        Router.go('/memoryCards/add/' + rv)
       });
     }
   }
