@@ -1,0 +1,18 @@
+<template name="memoryCardsAlbumEdit">
+
+  <h1>Editing <i>{{name}}</i></h1>
+
+  <form class="form js-edit">
+    <div class="form-group">
+      <label for="name">Album name</label>
+      <input class="form-control" name="name" value="{{name}}"/>
+    </div>
+    <div class="form-group">
+      <label for="descr">Description</label>
+      <textarea class="form-control" name="descr" cols="60" rows="3">{{descr}}</textarea>
+    </div>
+
+    <button class="btn btn-danger pull-right js-delete">Delete album</button>
+    <button class="btn btn-primary" type="submit">Edit album</button>
+  </form>
+</template>

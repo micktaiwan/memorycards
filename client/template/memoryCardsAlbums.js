@@ -21,10 +21,14 @@ Template.memoryCardsAlbum.helpers({
 
 Template.memoryCardsAlbum.events({
 
-  'click .js-add': function(e, tpl) {
+  'click .js-add': function(e) {
     e.preventDefault();
-
     Router.go('/memoryCards/add/' + this._id)
+  },
+
+  'click .js-edit': function(e) {
+    e.preventDefault();
+    Router.go('/memoryCards/albums/edit/' + this._id)
   }
 
 });

@@ -10,6 +10,14 @@ Template.memoryCardsAdd.helpers({
 
 });
 
+var anim = function(tpl) {
+
+  tpl.$("div")
+    .velocity({left: 50}, 100, "easeOutQuad")
+    .velocity({left: 0}, 300, "easeInSine");
+
+};
+
 Template.memoryCardsAdd.events({
 
   'click .js-add': function(e, tpl) {
@@ -21,15 +29,12 @@ Template.memoryCardsAdd.events({
       tpl.$('input[name=phrase1]').val('');
       tpl.$('input[name=phrase2]').val('');
       tpl.$('input[name=phrase1]').focus();
-      tpl.$("div")
-        .velocity({left: 50}, 100, "easeOutQuad")
-        .velocity({left: 0}, 300, "easeInSine");
+      anim(tpl);
     }
   },
 
   'click .js-bulk-add-link': function(e, tpl) {
     e.preventDefault();
-    console.log('o');
     tpl.$('.bulk-block').toggle();
   },
 
@@ -38,6 +43,8 @@ Template.memoryCardsAdd.events({
     var value = tpl.$('textarea[name=bulkAdd]').val();
     if(value) {
       Meteor.call('memoryCardsBulkAdd', value, this._id);
+      tpl.$('textarea[name=bulkAdd]').val('');
+      anim(tpl);
     }
   }
 

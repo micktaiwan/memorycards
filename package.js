@@ -32,7 +32,8 @@ Package.onUse(function(api) {
       'client/template/memoryCardsAdd.html',
       'client/template/memoryCardsAdd.js',
       'client/template/memoryCardsAlbumAdd.html',
-      'client/template/memoryCardsAlbumAdd.js',
+      'client/template/memoryCardsAlbumEdit.html',
+      'client/template/memoryCardsAlbumAddEdit.js',
       'client/template/memoryCardsRevise.html',
       'client/template/memoryCardsRevise.js',
       'client/template/memoryCardsRevisionFinished.html',
@@ -51,7 +52,8 @@ Package.onUse(function(api) {
     ['server', 'client']);
 
   api.add_files([
-      'server/publish.js'
+      'server/publish.js',
+      'server/startup.js'
     ],
     ['server']);
 
