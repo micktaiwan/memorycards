@@ -29,6 +29,13 @@ Template.memoryCardsAlbum.events({
   'click .js-edit': function(e) {
     e.preventDefault();
     Router.go('/memoryCards/albums/edit/' + this._id)
+  },
+
+  'click .js-revise': function(e) {
+    e.preventDefault();
+    console.log('revising', this._id);
+    Router.go('/memoryCards/revise/' + this._id)
   }
+
 
 });

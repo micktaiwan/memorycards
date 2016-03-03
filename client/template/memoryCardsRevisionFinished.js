@@ -10,6 +10,7 @@ Template.memoryCardsRevisionFinished.onCreated(function() {
   if(session) {
     Session.set('memoryCardsRevisionSession', session.id);
   }
+  else console.error('no session ?');
 
 });
 
@@ -34,10 +35,14 @@ Template.memoryCardsRevisionFinished.helpers({
 
 Template.memoryCardsRevisionFinished.events({
 
-  'click .js-start-revision': function(ev, tpl) {
-    Meteor.call('memoryCardsCreateRevisionSession', function() {
-      Router.go('memoryCardsRevise');
-    });
+  'click .js-start-revision': function() {
+    /*
+     var id = this;
+     Meteor.call('memoryCardsCreateRevisionSession', id, function() {
+     Router.go('memoryCardsRevise');
+     });
+     */
+    Router.go('memoryCardsAlbums');
   }
 
 });
